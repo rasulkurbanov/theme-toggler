@@ -1,14 +1,16 @@
+import React, { useState } from 'react'
 import './App.css';
 import ThemeContext from "./context/ThemeContext";
-import Main from './components/MainWithClass'
+import MainF from './components/MainWithFunction';
 
 function App() {
-  const theme = 'dark'
+  const [colour, setColour] = useState('dark')
+  const value = {colour, setColour}
 
   return (
-    <ThemeContext.Provider value={theme}>
+    <ThemeContext.Provider value={value}>
       <div>
-        <Main/>
+        <MainF/>
       </div>
     </ThemeContext.Provider>
   );
